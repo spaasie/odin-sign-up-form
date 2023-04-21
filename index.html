@@ -5,13 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up Form</title>
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <div class="flex-container">
     <div class="splash">
-      <img src="images/snowy-caravan-.png" alt="cat sleeping in small caravan">
+      <!-- <img src="images/snowy-caravan-.png" alt="cat sleeping in small caravan"> -->
       <!-- logo -->
+      <h1>spaasie's scribbles</h1>
       <!-- brand -->
     </div>
     <main>
@@ -20,37 +22,62 @@
         <fieldset>
           <!-- sign up -->
           <legend>Sign up form</legend>
-          <!-- first name -->
-          <label>
-            First Name
-            <input type="text" name="first_name">
-          </label>
-
-          <!-- last name -->
-          <label>
-            Last Name
-            <input type="text" name="last_name">
-          </label>
-          <!-- email -->
-          <label>
-            Email
-            <input type="email" name="email">
-          </label>
-          <!-- phone number -->
-          <label>
-            Phone Number
-            <input type="tel" name="tel">
-          </label>
-          <!-- password -->
-          <label>
-            Password
-            <input type="password" name="password">
-          </label>
-          <!-- confirm password -->
-          <label>
-            Confirm Password
-            <input type="password" name="confirm_password">
-          </label>
+          <div class="input-group">
+            <div class="group">
+              <div class="input">
+                <!-- first name -->
+                <label for="first_name">First Name *</label>
+                <input
+                  type="text"
+                  name="first_name"
+                  id="first_name"
+                  placeholder="John">
+              </div>
+              <div class="input">
+                <!-- last name -->
+                <label for="last_name">Last Name *</label>
+                <input
+                  type="text"
+                  name="last_name"
+                  id="last_name"
+                  placeholder="Doe"
+                  required>
+              </div>
+            </div>
+            <div class="group">
+              <div class="input">
+                <!-- email -->
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+              </div>
+              <div class="input">
+                <!-- phone number -->
+                <label for="tel">Phone Number</label>
+                <input type="tel" name="tel" id="tel">
+              </div>
+            </div>
+            <div class="group">
+              <div class="input">
+                <!-- password -->
+                <label for="password">Password</label>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  required>
+              </div>
+              <div class="input">
+                <!-- confirm password -->
+                <label for="confirm_password">Confirm Password</label>
+                <input
+                  id="confirm_password"
+                  name="confirm_password"
+                  type="password"
+                  onblur="validate()"
+                  required>
+              </div>
+            </div>
+          </div>
         </fieldset>
         <button type="submit">Create Account</button>
         <!-- create account -->
@@ -59,5 +86,6 @@
     </main>
   </div>
 
+  <script src="js/validate.js"></script>
 </body>
 </html>
