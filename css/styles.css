@@ -15,11 +15,19 @@
 :root {
   --light-black: rgb(36, 36, 36);
   --blue-violet: rgb(138, 43, 226);
+  --green: rgb(0, 255, 0);
   --red: rgb(255, 0, 0);
   --grey: rgb(156, 156, 156);
   --light-grey: rgb(211, 211, 211);
+
+  --opaque: rgba(0, 0, 0, 0);
+  --blue-violet-o: rgba(138, 43, 226, 0.2);
+  --green-o: rgba(0, 255, 0, 0.2);
+  --red-o: rgba(255, 0, 0, 0.2);
   --grey-o: rgba(156, 156, 156, 0.5);
   --white-o: rgba(255, 255, 255, 0.3);
+
+  --inset-shadow: inset 1px 1px 3px 2px #cccccc44;
 }
 
 .brand-name {
@@ -67,7 +75,7 @@ div.input {
   width: 50%;
   flex-direction: column;
   border: 2px solid var(--light-grey);
-  box-shadow: inset 1px 1px 3px 2px #cccccc44;
+  box-shadow: var(--inset-shadow);
   padding: 5px 10px 2px 10px;
   margin: 5px;
   border-radius: 5px;
@@ -76,8 +84,30 @@ div.input {
 div.input:focus-within {
   border: 2px solid var(--blue-violet);
   box-shadow:
-    inset 0 0 3px 2px rgba(137, 43, 226, 0.2),
-    0 0 3px 2px rgba(137, 43, 226, 0.2);
+    var(--inset-shadow),
+    0 0 3px 2px var(--blue-violet-o);
+}
+
+div.input[isvalid="true"] {
+  border: 2px solid var(--green);
+  box-shadow: var(--inset-shadow);
+}
+
+div.input[isvalid="true"]:focus-within {
+  box-shadow:
+    var(--inset-shadow),
+    0 0 3px 2px var(--green-o);
+}
+
+div.input[isvalid="false"] {
+  border: 2px solid var(--red);
+  box-shadow: var(--inset-shadow);
+}
+
+div.input[isvalid="false"]:focus-within {
+  box-shadow:
+    var(--inset-shadow),
+    0 0 3px 2px var(--red-o);
 }
 
 div.splash {
@@ -85,6 +115,20 @@ div.splash {
   background-image: url("../images/snowy-caravan.png");
   background-position: center;
   background-size: cover;
+}
+
+div.info-text {
+  /* margin: 10px 5%; */
+  margin: 100px 0 50px;
+}
+
+div.info-text p {
+  margin: 1px 0;
+  text-align: center;
+}
+
+p.login {
+  text-align: center;
 }
 
 label > span {
@@ -99,15 +143,15 @@ label > span[isvalid="false"] {
 
 main {
   flex: 2 1 0;
-  margin: 20px 20px;
+  margin: 0 5%;
   font-family: "Atkinson";
 }
-
 
 fieldset {
   border: 2px solid var(--light-grey);
   border-radius: 5px;
-  margin: 10px;
+  margin: 10px 0;
+  padding: 20px 20px 28px 20px;
   box-shadow: 5px 5px 5px 2px var(--grey-o);
 }
 
@@ -120,3 +164,33 @@ label {
   width: 100%;
 }
 
+button {
+  display: block;
+  margin: 30px auto;
+  padding: 10px 20px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: var(--blue-violet);
+  border: 2px solid var(--opaque);
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px 2px var(--grey-o);
+}
+
+button:focus {
+  border: 2px solid blue;
+}
+
+button:hover {
+  /* border: 2px solid var(--white); */
+  /* box-shadow:
+    2px 2px 5px 2px var(--grey-o),
+    2px 2px 3px 2px var(--blue-violet-o); */
+    background-color: rgb(151, 53, 243);
+
+}
+
+button:active {
+  transform: translate3d(0, 1px, 0);
+  box-shadow: 1px 1px 4px 1px var(--grey-o);
+}

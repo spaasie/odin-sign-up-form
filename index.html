@@ -18,7 +18,10 @@
     </div>
     <main>
       <!-- text info -->
-      <p>If you would like to join and learn or simply comission a work. Please sign up for an account</p>
+      <div class="info-text">
+        <p>It would be great if this was a real service, remember to smash that like and subscribe button.</p>
+        <p>If you would like to join and learn or simply comission a work. Please sign up for an account</p>
+      </div>
       <form action="post">
         <fieldset>
           <!-- sign up -->
@@ -32,7 +35,8 @@
                   type="text"
                   name="first_name"
                   id="first_name"
-                  placeholder="John">
+                  placeholder="John"
+                  required>
               </div>
               <div class="input">
                 <!-- last name -->
@@ -48,13 +52,26 @@
             <div class="group">
               <div class="input">
                 <!-- email -->
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email">
+                <label for="email">Email *</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="example@email.com"
+                  required>
               </div>
               <div class="input">
                 <!-- phone number -->
-                <label for="tel">Phone Number</label>
-                <input type="tel" name="tel" id="tel">
+                <label for="tel">Phone Number<span id="tel-notify"></span></label>
+                <input
+                  type="tel"
+                  name="tel"
+                  id="tel"
+                  minlength="10"
+                  maxlength="10"
+                  pattern="[0-9]{10}"
+                  placeholder="0929929292"
+                  onblur="validateTel()">
               </div>
             </div>
             <div class="group">
@@ -74,7 +91,7 @@
                   id="confirm_password"
                   name="confirm_password"
                   type="password"
-                  onblur="validate()"
+                  onblur="validatePass()"
                   required>
               </div>
             </div>
@@ -84,7 +101,7 @@
         <!-- create account -->
         <!-- already have an account / log in -->
       </form>
-      <p>already have an account?<a href="http://" target="_blank" rel="noopener noreferrer">Log in</a></p>
+      <p class="login">already have an account? <a href="http://" target="_blank" rel="noopener noreferrer">Log in</a></p>
     </main>
   </div>
 
