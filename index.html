@@ -11,7 +11,6 @@
 <body>
   <div class="flex-container">
     <div class="splash">
-      <!-- <img src="images/snowy-caravan-.png" alt="cat sleeping in small caravan"> -->
       <!-- logo -->
       <h1 class="brand-name">spaasie's scribbles</h1>
       <!-- brand -->
@@ -30,34 +29,43 @@
             <div class="group">
               <div class="input">
                 <!-- first name -->
-                <label for="first_name">First Name *</label>
+                <label for="first_name">
+                  First Name *
+                  <span id="fname_notify"></span>
+                </label>
                 <input
                   type="text"
                   name="first_name"
                   id="first_name"
                   placeholder="John"
+                  onblur="validateFirstName()"
                   required>
               </div>
               <div class="input">
                 <!-- last name -->
-                <label for="last_name">Last Name *</label>
+                <label for="last_name">
+                  Last Name *
+                  <span id="lname_notify"></span>
+                </label>
                 <input
                   type="text"
                   name="last_name"
                   id="last_name"
                   placeholder="Doe"
+                  onblur="validateLastName()"
                   required>
               </div>
             </div>
             <div class="group">
               <div class="input">
                 <!-- email -->
-                <label for="email">Email *</label>
+                <label for="email">Email *<span id="email-notify"></span></label>
                 <input
                   type="email"
                   name="email"
                   id="email"
                   placeholder="example@email.com"
+                  onblur="validateEmail()"
                   required>
               </div>
               <div class="input">
@@ -77,20 +85,29 @@
             <div class="group">
               <div class="input">
                 <!-- password -->
-                <label for="password">Password</label>
+                <label for="password">
+                  Password *
+                  <span id="pass_notify"></span>
+                </label>
                 <input
                   id="password"
                   name="password"
                   type="password"
+                  placeholder="••••••••••••"
+                  onblur="validatePass()"
                   required>
               </div>
               <div class="input">
                 <!-- confirm password -->
-                <label for="confirm_password">Confirm Password<span id="confirm_pass_notify"></span></label>
+                <label for="confirm_password">
+                  Confirm Password *
+                  <span id="confirm_pass_notify"></span>
+                </label>
                 <input
                   id="confirm_password"
                   name="confirm_password"
                   type="password"
+                  placeholder="••••••••••••"
                   onblur="validatePass()"
                   required>
               </div>

@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Annie Use Your Telescope";
+  font-family: "Annie";
   src:
     url("fonts/Annie\ Use\ Your\ Telescope-Regular.ttf")
     format("truetype");
@@ -31,7 +31,8 @@
 }
 
 .brand-name {
-  font-family: "Annie Use Your Telescope";
+  user-select: none;
+  font-family: "Annie";
   font-size: 100px;
   text-align: center;
   text-shadow:
@@ -118,7 +119,6 @@ div.splash {
 }
 
 div.info-text {
-  /* margin: 10px 5%; */
   margin: 100px 0 50px;
 }
 
@@ -155,6 +155,14 @@ fieldset {
   box-shadow: 5px 5px 5px 2px var(--grey-o);
 }
 
+legend {
+  user-select: none;
+  font-family: "Annie";
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--light-black);
+}
+
 label {
   position: relative;
   user-select: none;
@@ -177,17 +185,8 @@ button {
   box-shadow: 2px 2px 5px 2px var(--grey-o);
 }
 
-button:focus {
-  border: 2px solid blue;
-}
-
 button:hover {
-  /* border: 2px solid var(--white); */
-  /* box-shadow:
-    2px 2px 5px 2px var(--grey-o),
-    2px 2px 3px 2px var(--blue-violet-o); */
-    background-color: rgb(151, 53, 243);
-
+  background-color: rgb(140, 34, 240);
 }
 
 button:active {
